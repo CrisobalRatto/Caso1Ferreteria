@@ -1,0 +1,113 @@
+\documentclass{standalone}
+\usepackage{color}
+\usepackage{tikz}
+
+\usepackage{pgfgantt}
+%Used to draw gantt charts, which I will use for the calendar.
+\newganttchartelement{orangebar}{
+    orangebar/.style={
+        inner sep=0pt,
+        draw=red!66!black,
+        very thick,
+        top color=white,
+        bottom color=orange!80
+    },
+    orangebar label font=\slshape,
+    orangebar left shift=.1,
+    orangebar right shift=-.1
+}
+
+\newganttchartelement{bluebar}{
+    bluebar/.style={
+        inner sep=0pt,
+        draw=blue!44!black,
+        very thick,
+        top color=white,
+        bottom color=blue!80
+    },
+    bluebar label font=\slshape,
+    bluebar left shift=.1,
+    bluebar right shift=-.1
+}
+
+\newganttchartelement{greenbar}{
+    greenbar/.style={
+        inner sep=0pt,
+        draw=green!50!black,
+        very thick,
+        top color=white,
+        bottom color=green!80
+    },
+    greenbar label font=\slshape,
+    greenbar left shift=.1,
+    greenbar right shift=-.1
+}
+
+\begin{document}
+\begin{ganttchart}[
+    hgrid style/.style={black, dotted},
+    vgrid={*5{black,dotted}, *1{white, dotted}, *1{black, dashed}},
+    x unit=3mm,
+    y unit chart=9mm,
+    y unit title=12mm,
+    time slot format=isodate,
+    group label font=\bfseries \Large,
+    link/.style={->, thick}
+    ]{2021-03-27}{2021-07-07}
+    \gantttitlecalendar{year, month=name, week}\\
+
+    \ganttgroup[
+        group/.append style={fill=orange}
+    ]{Iteración 1}{2021-04-01}{2021-04-29}\\ [grid]
+    \ganttorangebar[
+        name=CartaGantt
+    ]{Carta Gantt}{2021-03-30}{2021-04-01}\\ [grid]
+    \ganttorangebar[
+        name=Creacionplantillasdoc
+    ]{Plantillas Documentos}{2021-03-31}{2021-04-06}\\ [grid]
+    \ganttorangebar[
+    name=Casosuso
+    ]{Casos de uso}{2021-04-01}{2021-04-08}\\ [grid]
+    \ganttorangebar[
+        name=Diagrama
+    ]{Diagrama de Actividad}{2021-04-07}{2021-04-12}\\ [grid]
+    \ganttorangebar[
+    name=BD
+    ]{Desarrollo Base de Datos}{2021-04-13}{2021-04-27}\\ [grid]
+    \ganttorangebar[name=Analisisbd]{Analisis Base de Datos}{2021-04-20}{2021-04-28}
+     \ganttnewline[thick, black]
+     
+     \ganttgroup[
+     group/.append style={fill=blue}
+     ]{Iteración 2}{2021-04-31}{2021-05-27}\\ [grid]
+    
+    \ganttbluebar{Correcion Entrega 1}{2021-05-03}{2021-05-07}
+    \ganttbluebar[name=correccion]{}{2021-05-10}{2021-05-11}\\[grid]
+   \ganttbluebar{Desarrollo}{2021-05-7}{2021-06-25}\\ [grid]
+   \ganttbluebar[name=scripsst]{Scrips Secuencias - Triggers}{2021-05-10}{2021-05-25}\\ [grid]
+   \ganttbluebar[name=Registro]{Registros Login}{2021-05-12}{2021-05-20}\\ [grid]
+   \ganttbluebar[name=DScrips]{Desarrollo Scrips}{2021-05-10}{2021-05-25}\\ [grid]
+   \ganttbluebar[name=DWeb]{Desarrollo Web}{2021-05-14}{2021-06-25}\\ [grid]
+   \ganttbluebar[name=testplan]{Plan de Testeo}{2021-05-20}{2021-05-26}\\ [grid]
+  	\ganttnewline[thick, black]
+    
+     \ganttgroup[
+    group/.append style={fill=green}
+    ]{Iteración 3}{2021-05-28}{2021-07-01}\\ [grid]
+    
+  \ganttgreenbar{Manual de Usuario}{2021-06-1}{2021-06-10}
+   \ganttlinkedgreenbar[name=usermanual]{}{2021-06-20}{2021-06-30}\\[grid]
+   \ganttgreenbar{Analisis Base de Datos}{2021-06-8}{2021-06-22}\\ [grid]
+   \ganttgreenbar[name=bdfinal]{Diseño Base de Datos Final}{2021-06-3}{2021-06-24}\\ [grid]
+ \ganttgreenbar[name=presentacion]{Preparacion Presentacion}{2021-06-24}{2021-06-30}\\ [grid]
+
+  \ganttnewline[thick, black]
+
+
+    %Implementing links
+    \ganttlink[link mid=0.75]{CartaGantt}{Creacionplantillasdoc}
+\ganttlink{Creacionplantillasdoc}{Casosuso}
+\ganttlink{Casosuso}{Diagrama}
+\ganttlink{Diagrama}{BD}
+\end{ganttchart}
+\end{document}
