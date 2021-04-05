@@ -1,0 +1,547 @@
+
+
+\documentclass[a4paper, 10pt, oneside]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.01cm]{geometry}
+
+%include the usecases package
+\usepackage{usecases}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{anyfontsize}
+\usepackage{setspace}
+\usepackage{makeidx} % This package helps in making an index
+\usepackage{tikz}
+\usepackage[bookmarks = false, hidelinks]{hyperref} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-----------------------CUSTOM COMMANDS--------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\textBF}[1]{%
+	\pdfliteral direct {2 Tr 1 w} %the second factor is the boldness
+	#1%
+	\pdfliteral direct {0 Tr 0 w}%
+}
+
+\newcommand{\textDF}[1]{%
+	\pdfliteral direct {2 Tr 0.2 w} %the second factor is the boldness
+	#1%
+	\pdfliteral direct {0 Tr 0 w}%
+}
+\newcommand{\answerbox}[1][3\baselineskip]{%
+	\noindent\framebox[\linewidth]{%
+		\raisebox{0pt}[0pt][#1]{}%
+	}\par\medskip%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-----------------------DOCUMENT BEGIN---------------------------%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\sloppy
+	
+	\begin{titlepage}
+		\thispagestyle{empty}
+		\title{
+			\includegraphics[width=4cm]{/Extra/duoc.PNG} \\
+			\vspace{3cm}
+			\begingroup
+			\setstretch{4}\fontsize{34}{10}\selectfont\fontdimen2\font=0.8ex
+			\parbox{13.3cm}{\textBF{Casos De uso “Sistema de Gestión de Ferretería FERME”}} %%Title
+			\endgroup}
+		\date{}
+		\author{}
+		\maketitle
+		\vspace{-1.5cm}
+		\hspace{4cm}\parbox[b][15cm][b]{8cm}{\textDF{\large\setstretch{1.5}
+				Portafolio de Título\\
+				Abril 2020\\
+				Grupo 1°\\ %NAME
+				Profesor: Nancy Bernal Sánchez\\
+				}}
+	\end{titlepage}
+	\newpage
+	\newgeometry{top=1in,bottom=1in,right=0.5in,left=1.5in} %Needed because margins were changed for titlepage
+	
+
+
+
+
+
+\begin{usecase}
+
+\addtitle{Use Case 1}{Id: 001}
+
+
+\addfield{Nombre:}{Registrar clientes}
+
+\additemizedfield{Actores:}{
+	\item Usuario 
+}
+
+\sloppy
+\addfield{Descripcion:}{“El usuario se registra ingresando todos sus datos personales requeridos por pantalla, un nombre de usuario disponible y contraseña.
+	 Si el usuario es empresa debera seleccionar la opcion disponible para ello." }
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser un usuario no registrado.
+
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item El usuario es registrado como persona normal.
+		\item El usuario es registrado como empresa.
+
+}
+
+\addfield{Trigger:}{El usuario entra al sitio web de la ferreteria y presiona el boton "Registrar".
+}
+
+
+\addscenario{Flujo:}{
+	\item El usuario entra a un Web Browser.
+	\item El usuario ingresa a la url de la ferreteria.
+	\item El usuario presiona el boton registrar.
+	\item El usuario ingresa los datos requeridos y acepta.
+	
+}
+
+\addfield{Diagrama de uso:}{ \answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 2}{Id: 002}
+
+
+\addfield{Nombre:}{Registro Empleados}
+
+\additemizedfield{Actores:}{
+	\item Usuario administrador
+	\item Usuario Vendedor
+	\item Usuario Empleado
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{"El usuario administrador es capaz de registrar a usuarios tipo vendedor o empleado segun sea el caso requriendo para su registro su Rut, Nombre, y Cargo. Ademas se debe proporcionar contraseña y nombre de usuario deseado."}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario administrador
+	\item Requerir nombre, rut y cargo
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Nuevo Vendedor esta en el sistema.
+	\item Nuevo empleado esta en el sistema.
+}
+
+\addfield{Trigger:}{El usuario administrador ingresa al sistema y presiona "Registrar Empleados"}
+
+
+\addscenario{Flujo:}{
+	\item El usuario administrador se logea en el sistema.
+	\item El usuario administrador presiona el boton "Registrar Empleados".
+	\item El usuario administrador socilita la informacion requerida.
+		\item El usuario administrador presiona el boton "Aceptar".
+}
+
+\addfield{Diagrama de uso:}{ \answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 3}{Id: 003}
+
+
+\addfield{Nombre:}{Registro Proveedor}
+
+\additemizedfield{Actores:}{
+	\item Usuario Administrador
+	\item Usuario Proveedor
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario administrador puede registrar un nuevo proveedor requiriendo datos del contacto (Nombre, celular) y su
+	respectivo rubro.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser Usuario Administrador.
+	\item Requerir datos del contacto.
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Se ha agregado un nuevo proveedor al sistema.
+
+}
+
+\addfield{Trigger:}{El usuario administrador entra al sistema y selecciona el boton "Registrar proveedor".}
+
+
+\addscenario{Flujo:}{
+	\item El usuario administrador se logea en el sistema.
+	\item El usuario administrador presiona el boton "Agregar Proveedor".
+		\item El usuario administrador solicita la informacion requerida del usuario Empleado o Vendedor.
+			\item El usuario administrador presiona el boton "Aceptar".
+}
+
+\addfield{Diagrama de uso:}{ \answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 4}{Id: 004}
+
+
+\addfield{Nombre:}{Registro Producto }
+
+\additemizedfield{Actores:}{
+	\item Usuario Administrador
+
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario administrador tiene la capacidad de registrar los productos que comercializa la empresa seleccionando por pantall su id de proveedor, familia de producto, su fecha de vencimiento(si no tiene existira una funcion para ello), tipo de producto, y Además, de su descripción, precio, stock, o stock crítico.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario administrador
+
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Un nuevo producto ha sido registrado mas toda su informacion necesaria para el software.
+
+}
+
+\addfield{Trigger:}{El usuario administrador se logea al sistema y presiona el boton "Registrar nuevo producto".}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador entra a un web browser.
+	\item El usuario administrador se logea con sus credenciales.
+		\item El usuario administrador presiona el boton "registrar nuevo producto".
+	
+}
+
+\addfield{Diagrama de uso:}{ \answerbox[18\baselineskip]}
+
+
+
+\newpage
+\addtitle{Use Case 5}{Id: 005}
+
+
+\addfield{Nombre:}{Usuario requiere ver o comprar/vender los productos que comercializa la empresa.}
+
+\additemizedfield{Actores:}{
+	\item Usuario Cliente
+	\item Usuario Vendedor
+	\item Usuario Administrador
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{los usuarios pueden ver los distintos productos que comercializa la empresa, con
+	respectivo precio y stock.
+	Además, de poder seleccionar para su facturación o boleta.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Cliente, Vendedor o Administrador
+	
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item El usuario puede ver el stock completo de la ferreteria.
+	\item El usuario puede facturar o boletear previa seleccion del producto deseado.
+}
+
+\addfield{Trigger:}{Usuario desea saber el stock de la ferreteria o comprar.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario entra al sistema.
+	\item Usuario presiona boton "Productos y Ventas".
+\item Si el usuario desea comprar producto debe seleccionar su producto deseado.
+\item Usuario presiona selecciona opcion boleta o facturacion en el caso de que el cliente sea empresa(de lo contrario solo podra seleccionar la opcion "Boleta").
+}
+
+\addfield{Diagrama de uso:}{\answerbox[16\baselineskip]}
+\newpage
+\addtitle{Use Case 6}{Id: 006}
+
+
+\addfield{Nombre:}{El usuario necesita ayuda.}
+
+\additemizedfield{Actores:}{
+	\item Usuario Cliente
+	\item Usuario Vendedor
+	\item Usuario Administrador
+	\item Usuario Empleado
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{Si el usuario se siente perdido en el sitio web, existira para el un elemento de ayuda en pantalla presente en todo el sitio web.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario registrado
+
+	
+	
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item El usuario puede hacer correcto uso de la app en caso de dificultades.
+	
+}
+
+\addfield{Trigger:}{Usuario desea saber el stock de la ferreteria o comprar.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario entra al sistema.
+	\item Usuario presiona boton "?".
+	
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+
+\newpage
+\addtitle{Use Case 7}{Id: 007}
+
+
+\addfield{Nombre:}{Cancelar Boleta/Factura.}
+
+\additemizedfield{Actores:}{
+
+	\item Usuario Vendedor
+	\item Usuario Administrador
+
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario Vendedor y Administrador pueden anular una factura o boleta actualizando el stock correspondiente.}
+
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Administrador o Vendedor.
+		\item Haber facturacion o boleta en el sistema.
+	
+	
+	
+}
+
+
+\additemizedfield{Post-Condiciones:}{
+	\item Boleta o factura cancelada.
+		\item Stock es actualizado correctamente.
+	
+	
+}
+
+\addfield{Trigger:}{Cancelacion de una compra en la app.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador o vendedor entra al sistema.
+	\item Usuario presiona boton "Bolotas/Facturas".
+	\item Usuario presiona selecciona la boleta o factura a cancelar.
+	
+	
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 8}{Id: 008}
+
+
+\addfield{Nombre:}{Realizar orden de compra para ferreteria.}
+
+\additemizedfield{Actores:}{
+	
+	\item Usuario Empleado
+	\item Usuario Administrador
+	
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario Empleado y administrador pueden realizar ordenes de compra para abastecer de productos a la ferreteria registrando los datos del proveedor, producto y solicitante (Empleado de la empresa). Tambien se permitira ver los productos solicitados en una lista.}
+
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Administrador o Vendedor.
+	\item Necesidad de reponer stock en un producto deseado.
+	
+	
+	
+}
+
+
+\additemizedfield{Post-Condiciones:}{
+	\item Reponer stock de ferreteria.
+	
+	
+	
+}
+
+\addfield{Trigger:}{falta de stock.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador o vendedor entra al sistema.
+	\item Usuario presiona boton "Orden de compra".
+	\item Usuario selecciona producto deseado y preciona ordenar.
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 9}{Id: 009}
+
+
+\addfield{Nombre:}{Registrar la recepcion de un producto ordenado.}
+
+\additemizedfield{Actores:}{
+	
+	\item Usuario Empleado
+	\item Usuario Administrador
+	
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario Empleado y administrador al momento del arrivo de un producto solicitado lo chequea con la orden de
+	compra y no permite ingresar un producto que no sea solicitado.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Administrador o Vendedor.
+	\item Producto requerido llega a la ferreteria.
+	
+	
+	
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Recepcion de productos Ordenada y reflejada en el stock.
+	
+	
+	
+}
+
+\addfield{Trigger:}{Arrivo de mercancia.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador o vendedor entra al sistema.
+	\item Usuario presiona boton "Recepcion Orden".
+	\item Usuario selecciona producto deseado y preciona archivar.
+	\item cuando el usuario este seguro de la compra presionara enviar.
+	
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 10}{Id: 010}
+
+
+\addfield{Nombre:}{Administracion recepcion de producto.}
+
+\additemizedfield{Actores:}{
+	
+	\item Usuario Empleado
+	\item Usuario Administrador
+	
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario Empleado y administrador pueden ver, modificar y anular ordenes de pedido, estas dos ultimas solo si aun no se ha enviado el pedido al proveedor.}
+
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Administrador o Vendedor.
+	\item Haber pedidos archivados en el sistema.
+	
+	
+	
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Ver, modificar o cancelar un pedido.
+	
+	
+	
+}
+
+\addfield{Trigger:}{Ver estado de los pedidos.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador o vendedor entra al sistema.
+	\item Usuario presiona boton "Recepcion Orden".
+	\item Usuario selecciona el boton "Archivo de pedidos".
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+\newpage
+\addtitle{Use Case 11}{Id: 011}
+
+
+\addfield{Nombre:}{Ver Informacion y estadisticas.}
+
+\additemizedfield{Actores:}{
+	
+	\item Usuario Vendedor
+	\item Usuario Administrador
+	
+	
+}
+
+\sloppy
+\addfield{Descripcion:}{El usuario Vendedor y administrador pueden ver y generar informes imprimibles con necesidades especificas. Los informes
+	permiten aplicar diferentes filtros que ayuden a seleccionar exactamente qué tipo de informaciones
+	se desea analizar. Además, se ofrecen datos completos sobre visitas al sitio web de la ferretería,
+	horarios y días de más accesos.
+}
+
+\additemizedfield{Pre-Condiciones:}{
+	\item Ser usuario Administrador o Vendedor.
+
+	
+	
+	
+}
+
+\additemizedfield{Post-Condiciones:}{
+	\item Saber estadisticas completas de clientes y ventas de la ferreteria.
+	
+	
+	
+}
+
+\addfield{Trigger:}{Requerir un mayor conocimiento sobre estadisticas de ventas y clientes para generar mas ventas en un futuro.}
+
+
+\addscenario{Flujo:}{
+	\item Usuario administrador o vendedor entra al sistema.
+	\item Usuario presiona boton "Estadisticas".
+
+}
+
+\addfield{Diagrama de uso:}{\answerbox[18\baselineskip]}
+
+\end{usecase}
+
+
+\end{document}
+
