@@ -1,50 +1,143 @@
-{% extends "app/layout.html" %}
+<!doctype html>
+<html lang="es">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block content %}
+	<!-- Bootstrap CSS -->
 
-<h2>{{ title }}</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            <form action="." method="post" class="form-horizontal">
-                {% csrf_token %}
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div class="form-group">
-                    <label for="id_username" class="col-md-2 control-label">User name</label>
-                    <div class="col-md-10">
-                        {{ form.username }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="id_password" class="col-md-2 control-label">Password</label>
-                    <div class="col-md-10">
-                        {{ form.password }}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="hidden" name="next" value="/" />
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                {% if form.errors %}
-                <p class="validation-summary-errors">Please enter a correct user name and password.</p>
-                {% endif %}
-            </form>
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm"></section>
-    </div>
-</div>
-
-{% endblock %}
+	<link rel="stylesheet" href="css\bootstrap.min.css"/>
+	<title>Ferme</title>
+</head>
 
 
-{% block scripts %}
+<body>
+	<div class="container bg-blue py-2">
+		<div class="row">
 
-    {% load static %}
-<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+			<div class="col-3">
+				<div class="container text-white">
+					<b><a class="navbar-brand text-white" href="index.html">Ferme</a></b>
+					
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
-{% endblock %}
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+			</div>
+
+			<DIV class="col-6">
+				<form class="form-inline my-2 my-lg-0"> 
+					<div class="row">
+
+						<div class="col-10">
+							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						</div>
+
+						<div class="col-2">
+							<button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Search</button>
+						</div>
+
+					</div>
+				</form>
+			</DIV>
+
+			<div class="col-3">
+				<div class="container text-white">
+					<b><a class="navbar-brand text-white" href="login.html">Login</a></b>
+					
+					
+				</div>
+			</div>
+			
+
+		</div>
+
+	</div>
+
+	<div class="container text-center bg-light">
+		<div class="row">
+
+			<div class="col-4"></div>
+			<div class="col-6">
+
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="productos.html">Productos</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">Sobre Nosotros</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contacto.html">Contacto</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-2"></div>
+
+			</div>
+
+
+		</nav>
+
+
+
+
+	</div>
+
+	<div class="container bg-light">
+		<div class="container px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
+			<div class="card card0 border-0">
+				<div class="row d-flex">
+					<div class="col-lg-6 bg-blue">
+						<div class="card1 pb-5">
+							<div class="row"> <img src="img/logo_ferme.png" class="logo"> </div>
+							
+						</div>
+					</div>
+					<div class="col-lg-6 py-5">
+						<div class="card2 card border-0 px-4 py-5">
+							<div class="row mb-4 px-3">
+
+
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Correo Electrónico</h6>
+								</label> <input class="mb-4" type="text" name="correo" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Contraseña</h6>
+								</label> <input type="password" name="clave" > </div>
+								<div class="row px-3 mb-4">
+									<a href="#" class="ml-auto mb-0 text-sm">Olvide mi Contraseña</a>
+								</div>
+								<div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Iniciar Sesión</button> </div>
+								<div class="row mb-4 px-3"> <small class="font-weight-bold">No tengo una cuenta, <a href="registro.html" class="text-danger ">registrarme.</a></small> </div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container bg-blue py-4">
+		<div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2019. All rights reserved.</small>
+			<div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+		</div>
+	</div>
+	
+
+
+
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.min.js"> </script>
+</body>
+</html>
