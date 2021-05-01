@@ -2,19 +2,52 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+<div class="container bg-light">
+    <div class="container px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
+        <div class="card card0 border-0">
+            <div class="row d-flex">
+                <div class="col-lg-6 bg-blue">
+                    <div class="card1 pb-5">
+                        <div class="row"> <img src="img/logo_ferme.png" class="logo"> </div>
+                        <div class="container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6661.016699375514!2d-71.69967292565126!3d-33.409988767204304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966216c7aa107dc1%3A0x7d02117abfecf56b!2sFerreter%C3%ADa!5e0!3m2!1ses!2scl!4v1619106888947!5m2!1ses!2scl" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6 py-5">
+                    <div class="card2 card border-0 px-4 py-5">
+                        <div class="row mb-4 px-3">
+                            <form action="https://app.99inbound.com/e/123" method="POST" target="_blank">
+                                <h3 style="text-align: center;">Contactanos</h3>
+                                <br>
+                                <br>
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input name="nombre" type="nombre"  class="form-control" id="nombre"  required>
+                                </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico</label>
+                                    <input name="email" type="email"  class="form-control" id="email"  required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Mensaje</label>
+                                    <textarea name="message" class="form-control" id="message" rows="5"  required></textarea>
+                                </div>
+
+                            </div>
+                            <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Enviar</button> </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

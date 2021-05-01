@@ -43,3 +43,16 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def registro(request):
+    """Renders the register page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/registro.html',
+        {
+            'title':'Registro',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
