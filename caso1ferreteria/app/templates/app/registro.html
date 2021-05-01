@@ -1,3 +1,4 @@
+
 {% extends "app/layout.html" %}
 
 {% block content %}
@@ -71,3 +72,54 @@
 <script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
 
 {% endblock %}
+=======
+{% block contenido %}
+
+	<div class="container bg-light">
+		<div class="container px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
+			<div class="card card0 border-0">
+				<div class="row d-flex">
+					<div class="col-lg-6 bg-blue">
+						<div class="card1 pb-5">
+							<div class="row"> <img src="{% static 'app/img/logo_ferme.png' %}" class="logo"> </div>
+							
+						</div>
+					</div>
+					<div class="col-lg-6 py-5">
+						<div class="card2 card border-0 px-4 py-3">
+							<div class="row mb-4 px-3">
+
+
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Nombre (*)</h6>
+								</label> <input class="mb-4" type="text" name="nombre" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Apellido(*)</h6>
+								</label> <input class="mb-4" type="text" name="apellido" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Dirección (*)</h6>
+								</label> <input class="mb-4" type="text" name="direccion" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Correo Electrónico</h6>
+								</label> <input class="mb-4" type="text" name="correo" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Contraseña (*)</h6>
+								</label> <input type="password" name="clave" > </div>
+								<div class="row px-3"> <label class="mb-1">
+									<h6 class="mb-0 text-sm">Confirmar Contraseña (*)</h6>
+								</label> <input type="password" name="clave" > </div>
+								
+								<div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Registrarse</button> </div>
+								
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1

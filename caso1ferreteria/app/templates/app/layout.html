@@ -1,23 +1,62 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> FERME</title>
     {% load static %} <!-- Solo me corre si lo dejo como static -->
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
 
+=======
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="css\bootstrap.min.css"/>
+  <title>Ferme</title>
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
 </head>
 
+
 <body>
+<<<<<<< HEAD
     <div class="container bg-blue py-2">
+=======
+  <header>
+
+    <!doctype html>
+    <html lang="es">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="css\bootstrap.min.css"/>
+      <title>Ferme</title>
+    </head>
+
+
+    <body>
+      <div class="container bg-blue py-2">
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
         <div class="row">
 
           <div class="col-3">
             <div class="container text-white">
+<<<<<<< HEAD
               <b><a class="navbar-brand text-white" href="{% url 'home' %}">Ferme</a></b>
 
            
+=======
+              <b><a class="navbar-brand text-white" href="index.html">Ferme</a></b>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+              </button>
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
             </div>
           </div>
 
@@ -30,7 +69,11 @@
                 </div>
 
                 <div class="col-2">
+<<<<<<< HEAD
                   <button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Buscar</button>
+=======
+                  <button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Search</button>
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
                 </div>
 
               </div>
@@ -39,7 +82,11 @@
 
           <div class="col-3">
             <div class="container text-white">
+<<<<<<< HEAD
               <b><a class="navbar-brand text-white" href="{% url 'login' %}">Log in</a></b>
+=======
+              <b><a class="navbar-brand text-white" href="login.html">Login</a></b>
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
 
 
             </div>
@@ -47,11 +94,75 @@
 
 
         </div>
+<<<<<<< HEAD
 
       </div>
 
       <div class="container text-center bg-light">
         <div class="row">
+=======
+
+      </div>
+
+      <div class="container text-center bg-light">
+        <div class="row">
+
+          <div class="col-4"></div>
+          <div class="col-6">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only"></span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-2"></div>
+
+          </div>
+
+
+        </nav>
+
+
+
+
+      </div>
+    </header>
+
+
+    <div id="contenido">
+      {% block contenido %}
+
+      {% endblock %}
+
+    </div>
+
+
+
+  <footer>
+    <div class="container bg-blue py-4">
+      <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">GROUPONE</small>
+        <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+      </div>
+    </div>
+  </footer>  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script scr="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/bootstrap.min.js"> </script>
+>>>>>>> 88d2c162eec46e71f4fd089f72fabc72bca83ac1
 
           <div class="col-4"></div>
           <div class="col-6">
@@ -109,4 +220,4 @@
           </div>
     </footer>
 </body>
-</html>
+  </html>
