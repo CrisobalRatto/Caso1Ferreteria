@@ -56,3 +56,42 @@ def registro(request):
             'year':datetime.now().year,
         }
     )
+
+def catalogo(request):
+    
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/catalogo.html',
+        {
+            'title':'Catalogo',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
+
+def carro(request):
+    """Renders the cart page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/carro.html',
+        {
+            'title':'Carro',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
+
+def user(request):
+    """Renders the user page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/user.html',
+        {
+            'title':'User',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )

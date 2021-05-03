@@ -6,7 +6,6 @@
     <title> FERME</title>
     {% load static %} <!-- Solo me corre si lo dejo como static -->
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-    
 
 </head>
 
@@ -41,8 +40,7 @@
           <div class="col-3">
             <div class="container text-white">
               <b><a class="navbar-brand text-white" href="{% url 'login' %}">Log in</a></b>
-
-
+              <b><a class="navbar-brand text-white" href="{% url 'carro' %}">Carro</a></b>
             </div>
           </div>
 
@@ -64,7 +62,7 @@
                     <a class="nav-link" href="{% url 'home' %}">Inicio <span class="sr-only"></span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="productos.html">Productos</a>
+                    <a class="nav-link" href="{% url 'catalogo' %}">Productos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">Sobre Nosotros</a>
