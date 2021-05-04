@@ -1,5 +1,5 @@
 {% extends "app/layout.html" %}
-
+{% load static %}
 {% block content %}
 
     
@@ -11,89 +11,97 @@
     <div class="container px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
-                <div class="col-lg-6 py-5">
+                <div class="col py-5">
                     <div class="card2 card border-0 px-4 py-5">
                         <div class="row mb-4 px-3">
 
-<!------ Include the above in your HEAD tag ---------->
 
 
 
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-</head>
 
+                            <div class="container ">
+                                
+                                <div class="row">
+                                    <div class="col-sm-4"><!--left col-->              
 
-<div class="container bootstrap snippet">
-    
-    <div class="row">
-  		<div class="col-sm-3"><!--left col-->
-              
+                                        <div class="text-center">
+                                            <div class="avatar col-md-3 col-lg-3" content-center> 
+                                                <img alt="User Pic" src="{% static 'app/img/userdefault.png' %}" width="100px" height="100px" class="img-circle img-responsive"> 
+                                            </div>
+                                        </div>
 
-      <div class="text-center">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-        <h6>Subir una Foto...</h6>
-        <input type="file" class="text-center center-block file-upload">
-      </div>
-
-               
-          <div class="panel panel-default">
-           
-          </div>
-          
-        </div><!--/col-3-->
-    	<div class="col-sm-9">
-            
-
-              
-          
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>Nombre</h4></label>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>Correo Electrónico</h4></label>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>Apellido</h4></label>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>Contraseña</h4></label>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>RUT</h4></label>
-                        </div>
-                        <div class="col-xs-6">
-                            <label for="nombre"><h4>Teléfono</h4></label>
-                        </div>
-                      
-                           
-                      
-              
-                  
-              
-             
-        </div><!--/col-9-->
-    </div><!--/row-->
-                                                        
-                            
-
-                        
-                            
-
-
-
-                            
+                                        
+                                        <div class="panel panel-default">
+                                    
+                                        </div>
+                                    
+                                    </div><!--/col-3-->
+                                    
+                                    <div class="col-sm-4">
+                                        <div class="col-xs-6">
+                                            <label for="nombre"><h4>Nombre</h4></label>
+                                        </div>
+                                        
+                                        <div class="col-xs-6">
+                                            <label for="apellido"><h4>Apellido</h4></label>
+                                        </div>
+                                        
+                                        <div class="col-xs-6">
+                                            <label for="rut"><h4>RUT</h4></label>
+                                        </div>
+                                        
+                                    </div><!--/col-9-->
+                                    <div class="col-sm-4">
+                                
+                                        <div class="col-xs-6">
+                                            <label for="correo"><h4>Correo Electrónico</h4></label>
+                                        </div>
+                                
+                                        <div class="col-xs-6">
+                                            <label for="pass"><h4>Contraseña</h4></label>
+                                        </div>
+                                
+                                        <div class="col-xs-6">
+                                            <label for="fono"><h4>Teléfono</h4></label>
+                                        </div>
+                                    </div><!--/col-9-->
+                                </div><!--/row-->
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                          <tr>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Descripcion</th>
+                                            <th scope="col">$ Unit</th>
+                                            <th scope="col">Totak</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row text-center">----</th>
+                                            <td>----</td>
+                                            <td>----</td>
+                                            <td>----</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row text-center">----</th>
+                                            <td>----</td>
+                                            <td>----</td>
+                                            <td>----</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}  
