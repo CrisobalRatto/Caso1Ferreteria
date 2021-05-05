@@ -48,6 +48,11 @@ body {
     height: 200px
 }
 
+.mapa{
+        
+    display: flex;
+    justify-content: center;
+}
 
 
 .text-sm {
@@ -148,12 +153,17 @@ a {
     .avatar{
         
         display: flex;
-  justify-content: center;
+        justify-content: center;
     }
+
+    .mapa{
+        
+        display: flex;
+        justify-content: center;
+    }
+    
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 

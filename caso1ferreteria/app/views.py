@@ -31,6 +31,19 @@ def contact(request):
         }
     )
 
+def datoscontacto(request):
+    """Renders the datoscontacto page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/datoscontacto.html',
+        {
+            'title':'Datos de Contacto',
+            'message':'Your contact page.',
+            'year':datetime.now().year,
+        }
+    )
+
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -65,6 +78,32 @@ def catalogo(request):
         'app/catalogo.html',
         {
             'title':'Catalogo',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
+
+def faq(request):
+    
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/faq.html',
+        {
+            'title':'FAQ',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+        }
+    )
+
+def termscons(request):
+    
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/termscons.html',
+        {
+            'title':'Terminos y Condiciones',
             'message':'Your application description page.',
             'year':datetime.now().year,
         }
