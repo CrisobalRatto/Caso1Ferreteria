@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'caso1ferreteria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'localhost:1521/xe',
-        'USER': 'FERME_PRUEBAS',
+        'NAME': 'ORCL',
+        'USER': 'C##FERME',
         'PASSWORD': 'asd',
         'TEST': {
             'USER': 'default_test',

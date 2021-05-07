@@ -1,0 +1,176 @@
+{% extends "app/layout.html" %}
+{% block content %}
+
+    <main class="page catalog-page">
+        <section class="clean-block clean-catalog dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Catalogo</h2>
+                    <p>Nuestros productos.</p>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="d-none d-md-block">
+                                <div class="filters"><input class="border rounded-0 border-warning form-control-sm" type="search" placeholder="Buscar Productos" name="buscador">
+                                    <div class="filter-item">
+                                        <h3>Categorias</h3>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">esto</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">se carga</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">con la</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">bd</label></div>
+                                    </div>
+                                    <div class="filter-item">
+                                        <h3></h3>
+                                    </div>
+                                    <div class="filter-item"></div>
+                                </div>
+                            </div>
+                            <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="filters" href="#filters" role="button">Filters<i class="icon-arrow-down filter-caret"></i></a>
+                                <div class="collapse"
+                                    id="filters">
+                                    <div class="filters"><input class="border rounded-0 border-warning form-control-sm" type="search" placeholder="Buscar Productos" name="buscador">
+                                        <div class="filter-item">
+                                            <h3>Categorias</h3>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">esto</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">se carga</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3">con la</label></div>
+                                            <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-4"><label class="form-check-label" for="formCheck-4">bd</label></div>
+                                        </div>
+                                        <div class="filter-item">
+                                            <h3></h3>
+                                        </div>
+                                        <div class="filter-item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="products">
+                                <div class="row no-gutters">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/711V9f3nOZL._AC_.jpg"></a></div>
+                                            <div class="product-name"><a href="#">taladro</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/AISLAPOL-50MM-.jpg" style="height: 151px;"></a></div>
+                                            <div class="product-name"><a href="#">plumavit</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/015043.jpg"></a></div>
+                                            <div class="product-name"><a href="#">taladro 2</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/clavos-doble-RR.jpg"></a></div>
+                                            <div class="product-name"><a href="#">clavos</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/RIWANT0001-4.jpg"></a></div>
+                                            <div class="product-name"><a href="#">wd 40</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/mwt-2981-20_xl.jpg"></a></div>
+                                            <div class="product-name"><a href="#">taladro</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/008013015.jpg" style="width: 164px;"></a></div>
+                                            <div class="product-name"><a href="#">poxipol</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/STHT51457_1.jpg"></a></div>
+                                            <div class="product-name"><a href="#">martillo</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="clean-product-item">
+                                            <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="static/app/img/centimeter-equipment-inch-inches-instrument-length-measure-measurement-meter.jpg" style="width: 191px;"></a><a href="#"></a></div>
+                                            <div class="product-name"><a href="#">metro</a></div>
+                                            <div class="about">
+                                                <div class="rating"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star.svg"><img src="static/app/img/star-half-empty.svg"><img src="static/app/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>$100</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <nav>
+                                    <ul class="pagination">
+                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

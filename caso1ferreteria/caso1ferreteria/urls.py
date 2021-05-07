@@ -13,6 +13,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
+    path('register/', views.register, name='register'),
     path('login/',
          LoginView.as_view
          (
@@ -27,4 +28,9 @@ urlpatterns = [
          name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
+    path('catalog/', views.catalog, name='catalog'),
+    path('payment/', views.payment, name='payment'),
+    path('product/', views.product, name='product'),
+    path('shopping/', views.shopping, name='shopping'),
+
 ]
