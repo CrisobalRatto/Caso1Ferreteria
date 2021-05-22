@@ -1,18 +1,15 @@
 {% if user.is_authenticated %}
 <form id="logoutForm" action="/logout/" method="post" class="navbar-right">
     {% csrf_token %}
-    <ul class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark border-warning border rounded-0 clean-navbar">
-        <li><span class="navbar-brand">Bienvenido {{ user.username }}!</span></li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item" role="presentation"><a class="nav-link border rounded-0 border-warning">Bienvenido {{ user.username }}!</a></li>
+        <li class="nav-item" role="presentation"><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
     </ul>
 </form>
-
 {% else %}
-
 <ul class="nav navbar-nav ml-auto">
      <li class="nav-item" role="presentation"><a class="nav-link border rounded-0 border-warning {{login_page}}" href="{% url 'login' %}">Iniciar sesión</a></li>
      <li class="nav-item" role="presentation"><a class="nav-link border rounded-0 border-warning {{register_page}}" href="{% url 'register' %}">Registrarse</a></li>
 </ul>
-
 {% endif %}
 

@@ -32,6 +32,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\admin.py" />
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -141,6 +142,7 @@
     <Content Include="app\templates\app\about-us.html" />
     <Content Include="app\templates\app\assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="app\templates\app\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="app\templates\app\assets\css\register.css" />
     <Content Include="app\templates\app\assets\css\smoothproducts.css" />
     <Content Include="app\templates\app\assets\fonts\Simple-Line-Icons.eot" />
     <Content Include="app\templates\app\assets\fonts\simple-line-icons.min.css" />
@@ -180,6 +182,7 @@
     <Content Include="app\templates\app\assets\img\tech\image3.png" />
     <Content Include="app\templates\app\assets\img\tech\image4.jpg" />
     <Content Include="app\templates\app\assets\js\jquery.min.js" />
+    <Content Include="app\templates\app\assets\js\register.js" />
     <Content Include="app\templates\app\assets\js\smoothproducts.min.js" />
     <Content Include="app\templates\app\assets\js\theme.js" />
     <Content Include="app\templates\app\catalog-page.html" />

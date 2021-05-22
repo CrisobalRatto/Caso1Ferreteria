@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class AuthGroup(models.Model):
@@ -30,6 +31,7 @@ class AuthPermission(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
     codename = models.CharField(max_length=100, blank=True, null=True)
+
 
     class Meta:
         managed = False
@@ -103,6 +105,7 @@ class Cliente(models.Model):
     nombres = models.CharField(max_length=50)
     apellidos = models.CharField(max_length=50)
     id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='id_usuario')
+
     correo_cliente = models.CharField(max_length=50)
 
     class Meta:
@@ -309,6 +312,11 @@ class OrdenCompra(models.Model):
         db_table = 'orden_compra'
 
 
+
+
+
+
+
 class Producto(models.Model):
     id_producto = models.BigIntegerField(primary_key=True)
     nombre_producto = models.CharField(max_length=30)
@@ -316,7 +324,7 @@ class Producto(models.Model):
     id_familia = models.ForeignKey(FamiliaProducto, models.DO_NOTHING, db_column='id_familia')
     fecha_vencimiento = models.DateField(blank=True, null=True)
     id_tipo = models.ForeignKey('TipoProducto', models.DO_NOTHING, db_column='id_tipo')
-    descripcion = models.CharField(max_length=100) #base de datos error en la o acento o no se
+    #descripcion = models.CharField(max_length=100) #base de datos error en la o acento o no se
     precio_clp = models.IntegerField()
     precio_usd = models.IntegerField()
     stock = models.IntegerField()
@@ -447,5 +455,5 @@ class Usuario(models.Model):
     id_tipousu = models.ForeignKey(TipoUsuario, models.DO_NOTHING, db_column='id_tipousu')
 
     class Meta:
-        managed = False
+        
         db_table = 'usuario'

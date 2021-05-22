@@ -4,7 +4,10 @@ Definition of views.
 
 from datetime import datetime
 from django.shortcuts import render
+from app.models import Usuario #importar modelo para registrar en db
 from django.http import HttpRequest
+
+from django.contrib import messages 
 
 def home(request):
     """Renders the home page."""
@@ -18,6 +21,8 @@ def home(request):
             'home_page': 'active',
         }
     )
+##def home(reqiest):
+##   return render_to_response('app/index.html')
 
 def about(request):
     """Renders the about  page."""
@@ -118,3 +123,25 @@ def payment(request):
             'register_page': 'active',
         }
     )
+
+
+
+
+
+
+#registro usuario
+
+def Userregistration(request):
+    if request.method=='POST':
+        if request.POST.get('id_usuario') and request.POST.get('nombre_usuario') and request.POST.get('contrasena') and request.POST.get('id_tipousu'): 
+            saverecord=Usuario() 
+            saverecord.id_usuario=request.POST.get('id_usuario')
+            saverecord.nombre_usuario=request.POST.get('nombre_usuario')
+            saverecord.contrasena=request.POST.get('contrasena')
+            saverecord.id_tipousu=request.POST.get('id_tipousu')
+            saverecord.save()
+            messages.success(request,'Usuario registrado satisfactoriamente.')
+            return render(request,'index.html')
+        else:
+            return render(request,'index.html')
+
