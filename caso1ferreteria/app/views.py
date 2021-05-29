@@ -6,6 +6,8 @@ from datetime import datetime
 from django.shortcuts import render
 from app.models import Usuario #importar modelo para registrar en db
 from django.http import HttpRequest
+from app import views
+
 
 from django.contrib import messages 
 
@@ -31,7 +33,7 @@ def about(request):
         request,
 
 
-        'app/about-us.html',
+        'main/about-us.html',
         {
             'title':'Acerca de nosotros',
             'message':'pague aqui.',
@@ -45,7 +47,7 @@ def contact(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/contact-us.html',
+        'main/contact-us.html',
         {
             'title':'Contactenos',
             'message':'Pagina de contacto.',
@@ -54,26 +56,26 @@ def contact(request):
         }
     )
 
-def register(request):
-    """Renders the about Register page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/registration.html',
-        {
-            'title':'Registración',
-            'message':'Regístrese Aquí.',
-            'year':datetime.now().year,
-            'register_page': 'active',
-        }
-    )
+##def register(request):
+ #   """Renders the about Register page."""
+#    assert isinstance(request, HttpRequest)
+#    return render(
+#        request,
+#        'app/registration.html',
+ #       {
+  #          'title':'Registración',
+   #         'message':'Regístrese Aquí.',
+    #        'year':datetime.now().year,
+     #       'register_page': 'active',
+      #  }
+    #)
 
 def product(request):
     """Renders the about product page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/product-page.html',
+        'main/product-page.html',
         {
             'title':'Pagina producto',
             'message':'vea su producto.',
@@ -87,7 +89,7 @@ def catalog(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/catalog-page.html',
+        'main/catalog-page.html',
         {
             'title':'Catalogo',
             'message':'Nuestros productos.',
@@ -101,7 +103,7 @@ def shopping(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/shopping-cart.html',
+        'main/shopping-cart.html',
         {
             'title':'Carro de compras',
             'message':'carro de compras.',
@@ -115,7 +117,7 @@ def payment(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/payment-page.html',
+        'main/payment-page.html',
         {
             'title':'Pago',
             'message':'pague aqui.',
@@ -132,16 +134,17 @@ def payment(request):
 #registro usuario
 
 def Userregistration(request):
+    
     if request.method=='POST':
-        if request.POST.get('id_usuario') and request.POST.get('nombre_usuario') and request.POST.get('contrasena') and request.POST.get('id_tipousu'): 
-            saverecord=Usuario() 
-            saverecord.id_usuario=request.POST.get('id_usuario')
-            saverecord.nombre_usuario=request.POST.get('nombre_usuario')
-            saverecord.contrasena=request.POST.get('contrasena')
-            saverecord.id_tipousu=request.POST.get('id_tipousu')
-            saverecord.save()
-            messages.success(request,'Usuario registrado satisfactoriamente.')
-            return render(request,'index.html')
-        else:
-            return render(request,'index.html')
+        id_usuario=request.GET
+        id_tipousu=request.GET
+        nombre_usuario=request.POST['nombre_usuario']
+        contrasena=request.POST['contrasena']
 
+
+
+        Usuario(nombre_usuario=nombre_usuario,contrasena=contrasena).save()
+        messages.success(request,'el usuatio'+request.POST['nombre_usuario']+'se guardo')
+        return render(request,'app/registration.html')
+    else:
+        return render(request,'app/registration.html')

@@ -449,10 +449,10 @@ class TipoUsuario(models.Model):
 
 
 class Usuario(models.Model):
-    id_usuario = models.IntegerField(primary_key=True)
+    id_usuario = models.IntegerField(primary_key=True, default="000")
     nombre_usuario = models.CharField(max_length=30)
     contrasena = models.CharField(max_length=64)
-    id_tipousu = models.ForeignKey(TipoUsuario, models.DO_NOTHING, db_column='id_tipousu')
+    id_tipousu = models.ForeignKey(TipoUsuario, models.DO_NOTHING, db_column='id_tipousu', default="01")
 
     class Meta:
         

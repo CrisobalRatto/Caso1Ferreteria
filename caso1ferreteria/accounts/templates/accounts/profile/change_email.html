@@ -1,0 +1,18 @@
+{% extends 'layouts/default/layout.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+    <h4>Cambiar Email</h4>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-success">Cambiar</button>
+
+    </form>
+
+{% endblock %}

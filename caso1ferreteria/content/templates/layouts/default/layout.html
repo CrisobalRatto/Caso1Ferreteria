@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="latin-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Django Application</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/fonts/simple-line-icons.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/register.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/js/register.js' %}" />
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark border-warning border rounded-0 clean-navbar">
+        <div class="container">
+            <a class="navbar-brand border rounded-0 border-warning shadow-sm rubberBand animated logo" href="#" style="filter: blur(0px);"><em>Ferreteria Ferme</em></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link {{home_page}}" href="{% url 'index' %}">Inicio</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{catalog_page}}" href="{% url 'catalog' %}">Catalogo</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{shopping_page}}" href="{% url 'shopping' %}">Carro Compras</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{about_page}}" href="{% url 'about' %}">Acerca de ferme</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link {{contact_page}}" href="{% url 'contact' %}">Contactenos</a></li>
+
+                </ul>
+                {% include 'main/loginpartial.html' %}
+            </div>
+        </div>
+    </nav>
+     
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer class="page-footer dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h5>Para Comenzar</h5>
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Registrar</a></li>
+                            <li><a href="#">Catalogo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Acerca de nosotros</h5>
+                        <ul>
+                            <li><a href="#">Informacion de la compañia</a></li>
+                            <li><a href="#">Contactenos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5>Soporte</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2021 DuocUc</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

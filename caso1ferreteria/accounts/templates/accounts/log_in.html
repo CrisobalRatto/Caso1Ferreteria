@@ -1,0 +1,34 @@
+{% extends 'layouts/default/layout.html' %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+    <h4>Iniciar Seccion</h4>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-primary">Iniciar Seccion</button>
+
+    </form>
+
+    <hr>
+
+    <ul>
+        <li>
+            <a href="{% url 'accounts:restore_password' %}">Olvido su Contrasena</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:remind_username' %}">Olvido su nombre de usuario</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:resend_activation_code' %}">Reenviar codigo de activacion</a>
+        </li>
+    </ul>
+
+{% endblock %}
+
+

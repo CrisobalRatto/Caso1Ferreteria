@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Producto, Region, Comuna, TipoProducto, FamiliaProducto, Proveedor, Usuario
 
 #Superusuario: ferme
-#Contraseña: ferme
+#Contrasena: ferme
 
 admin.site.register(Producto)
 admin.site.register(Region)
