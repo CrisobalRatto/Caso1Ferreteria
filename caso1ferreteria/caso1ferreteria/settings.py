@@ -70,10 +70,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'caso1ferreteria.wsgi.application'
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#mail settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(CONTENT_DIR, 'tmp/emails')
-EMAIL_HOST_USER = 'test@example.com'
-DEFAULT_FROM_EMAIL = 'test@example.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'cristofopo@gmail.com'
+EMAIL_HOST_PASSWORD = 'frffirnuzcbeukcu' 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'default from email'
+
+#EMAIL_HOST = 'smpt.gmail.com'
+#EMAIL_PORT = '587'
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+#EMAIL_FILE_PATH = os.path.join(CONTENT_DIR, 'tmp/emails')
+#EMAIL_HOST_USER = 'cristofopo@gmail.com'
+#EMAIL_HOST_PASSWORD = 'frffirnuzcbeukcu'
+#DEFAULT_FROM_EMAIL = 'cristofopo@gmail.com'
+#EMAIL_USE_TLS = True
 
 DATABASES = {
     'default': {

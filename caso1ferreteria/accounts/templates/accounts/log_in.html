@@ -3,15 +3,33 @@
 
 
 {% block content %}
+    
+                                <br>
 
-    <h4>Iniciar Seccion</h4>
+
+                    <br>   
+    <h4>Iniciar sesion</h4>
 
     <form method="post">
 
         {% csrf_token %}
-        {% bootstrap_form form %}
+        
+        
 
-        <button class="btn btn-primary">Iniciar Seccion</button>
+     
+        <div class="container">
+                <div class="block-heading">
+                    
+                    <p></p>
+
+
+                </div>
+ 
+            {% bootstrap_form form %}
+            <button class="btn btn-primary">Iniciar sesion</button>
+            </div>
+
+
 
     </form>
 

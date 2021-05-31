@@ -1,2 +1,7 @@
-/* Hi there */
+body {
+    padding-top: 65px;
+}
 
+.form-group .form-control {
+    padding-top: 65px;
+}

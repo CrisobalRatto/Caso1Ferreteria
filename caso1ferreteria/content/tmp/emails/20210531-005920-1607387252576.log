@@ -1,0 +1,53 @@
+Content-Type: multipart/alternative;
+ boundary="===============1163634949198415651=="
+MIME-Version: 1.0
+Subject: Profile activation
+From: cristofopo@gmail.com
+To: cristofopo@me.com
+Date: Mon, 31 May 2021 04:59:20 -0000
+Message-ID: <162243716009.21884.5545472354655937367@DESKTOP-MDT7QF8>
+
+--===============1163634949198415651==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+To activate your profile, please follow this link:
+
+http://localhost:59991/accounts/activate/mXqqB6OKtf4QDsFr0r6E/
+
+--===============1163634949198415651==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Profile activation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    'Para activar siga este link:'
+</p>
+
+<p>
+    <a href="http://localhost:59991/accounts/activate/mXqqB6OKtf4QDsFr0r6E/">http://localhost:59991/accounts/activate/mXqqB6OKtf4QDsFr0r6E/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============1163634949198415651==--
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,59 @@
+Content-Type: multipart/alternative;
+ boundary="===============5932687041395548971=="
+MIME-Version: 1.0
+Subject: Restore password
+From: cristhopher.c@yahoo.com
+To: cristofopo@gmail.com
+Date: Mon, 31 May 2021 04:36:18 -0000
+Message-ID: <162243577820.15544.6672602795176757283@DESKTOP-MDT7QF8>
+
+--===============5932687041395548971==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+You received this email because you requested a password reset for your user account.
+
+Please, go to the following page and choose a new password:
+
+http://localhost:57465/accounts/restore/MjE/5r3-20cef7541d2668ae043a/
+
+--===============5932687041395548971==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Restore password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    'Recibio este email por que envio un reseteo de contrasena para su cuenta.'
+</p>
+
+<p>
+    'Porfavor dirigace a la siguiente pagina y eliga su contrasena.'
+</p>
+
+<p>
+    <a href="http://localhost:57465/accounts/restore/MjE/5r3-20cef7541d2668ae043a/">http://localhost:57465/accounts/restore/MjE/5r3-20cef7541d2668ae043a/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============5932687041395548971==--
+
+-------------------------------------------------------------------------------

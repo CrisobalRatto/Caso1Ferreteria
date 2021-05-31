@@ -1,18 +1,19 @@
-{% extends 'layouts/default/layout.html' %}
+{% extends 'layouts/default/layout.html' %}'crear'
 
 {% load bootstrap4 %}
 
 
 {% block content %}
-
-    <h4>'Crear Cuenta'</h4>
+<br>
+<br>
+    <h4>Crear Cuenta</h4>
 
     <form method="post">
 
         {% csrf_token %}
         {% bootstrap_form form %}
 
-        <button class="btn btn-success">'Crear'</button>
+        <button class="btn btn-success">Crear</button>
 
     </form>
 

@@ -121,14 +121,14 @@ class SignUpView(GuestOnlyView, FormView):
             send_activation_email(request, user.email, code)
 
             messages.success(
-                request, _('You are signed up. To activate the account, follow the link sent to the mail.'))
+                request, _('Esta registrado para activar la cuenta ingrese al link enviado a su mail.'))
         else:
             raw_password = form.cleaned_data['password1']
 
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
 
-            messages.success(request, _('You are successfully signed up!'))
+            messages.success(request, _('Fue registrado correctamente'))
 
         return redirect('index')
 
@@ -146,7 +146,7 @@ class ActivateView(View):
         # Remove the activation record
         act.delete()
 
-        messages.success(request, _('You have successfully activated your account!'))
+        messages.success(request, _('Activo su cuenta correctamente'))
 
         return redirect('accounts:log_in')
 
@@ -176,7 +176,7 @@ class ResendActivationCodeView(GuestOnlyView, FormView):
 
         send_activation_email(self.request, user.email, code)
 
-        messages.success(self.request, _('A new activation code has been sent to your email address.'))
+        messages.success(self.request, _('un nuevo codigo de activacion fue enviado a su email.'))
 
         return redirect('accounts:resend_activation_code')
 
@@ -221,7 +221,7 @@ class ChangeProfileView(LoginRequiredMixin, FormView):
         user.last_name = form.cleaned_data['last_name']
         user.save()
 
-        messages.success(self.request, _('Profile data has been successfully updated.'))
+        messages.success(self.request, _('Datos del perfil cambiados exitosamente.'))
 
         return redirect('accounts:change_profile')
 
@@ -255,12 +255,12 @@ class ChangeEmailView(LoginRequiredMixin, FormView):
 
             send_activation_change_email(self.request, email, code)
 
-            messages.success(self.request, _('To complete the change of email address, click on the link sent to it.'))
+            messages.success(self.request, _('para completar el cambio de mail por favor revisar el link enviado a su correo.'))
         else:
             user.email = email
             user.save()
 
-            messages.success(self.request, _('Email successfully changed.'))
+            messages.success(self.request, _('Email cambiado exitosamente.'))
 
         return redirect('accounts:change_email')
 
@@ -278,7 +278,7 @@ class ChangeEmailActivateView(View):
         # Remove the activation record
         act.delete()
 
-        messages.success(request, _('You have successfully changed your email!'))
+        messages.success(request, _('Email cambiado exitosamente'))
 
         return redirect('accounts:change_email')
 
@@ -291,7 +291,7 @@ class RemindUsernameView(GuestOnlyView, FormView):
         user = form.user_cache
         send_forgotten_username_email(user.email, user.username)
 
-        messages.success(self.request, _('Your username has been successfully sent to your email.'))
+        messages.success(self.request, _('Su nombre de usuario a sido enviado a su mail.'))
 
         return redirect('accounts:remind_username')
 
@@ -306,7 +306,7 @@ class ChangePasswordView(BasePasswordChangeView):
         # Re-authentication
         login(self.request, user)
 
-        messages.success(self.request, _('Your password was changed.'))
+        messages.success(self.request, _('Se ha cambiado su contrasena.'))
 
         return redirect('accounts:change_password')
 
@@ -318,7 +318,7 @@ class RestorePasswordConfirmView(BasePasswordResetConfirmView):
         # Change the password
         form.save()
 
-        messages.success(self.request, _('Your password has been set. You may go ahead and log in now.'))
+        messages.success(self.request, _('Contrasena cambiada exitosamente. Ahora se puede logear.'))
 
         return redirect('accounts:log_in')
 

@@ -5,3 +5,8 @@
 body {
     padding-top: 65px;
 }
+.invalid-feedback {
+    display: initial;
+}
+
+```

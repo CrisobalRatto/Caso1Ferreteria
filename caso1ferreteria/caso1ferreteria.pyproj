@@ -197,6 +197,7 @@
     <Content Include="app\static\app\img\tech\image3.png" />
     <Content Include="app\static\app\img\tech\image4.jpg" />
     <Content Include="app\static\app\js\jquery.min.js" />
+    <Content Include="app\static\app\js\popper.min.js" />
     <Content Include="app\static\app\js\register.js" />
     <Content Include="app\static\app\js\smoothproducts.min.js" />
     <Content Include="app\static\app\js\theme.js" />
