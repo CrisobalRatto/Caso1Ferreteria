@@ -47,9 +47,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
-    path('catalog/', views.catalog, name='catalog'),
+    
     path('payment/', views.payment, name='payment'),
-    path('product/', views.product, name='product'),
+    
     path('shopping/', views.shopping, name='shopping'),
     path('', IndexPageView.as_view(), name='index'),
 
@@ -57,5 +57,6 @@ urlpatterns = [
     
 
     path('accounts/', include('accounts.urls')),
+    path('catalog/', include('products.urls')),
     
 ]

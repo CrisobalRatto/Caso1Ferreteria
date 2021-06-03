@@ -1,29 +1,52 @@
-{% extends 'layouts/default/layout.html' %}
+{% extends 'layouts/default/layout.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap.css' %}" /> {% endblock %}{% block js%}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-{% block content %}
+{% endblock %} {% block content %}
 
 
 
-   
-    <main class="page">
-        <section class="clean-block about-us">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Acerca de nosotros</h2>
-                    <p style="opacity: 1;"><br>Inició sus operaciones un 2 de Mayo de 1995, formada por un grupo de ferreteros pioneros, con el objetivo de desarrollar negociaciones con los proveedores del rubro para comprar en forma centralizada.Hoy está compuesta por más
-                        de 50 ferreteros con una Cadena de más de 150 locales desde Arica a Punta Arenas, entregando a sus Clientes asesoría, un amplio mix de productos, precios convenientes y atención personalizada.Chilemat SpA. aporta a cada uno de
-                        sus socios en diversas áreas como: transferencia de información, remodelación de locales, capacitación, sistemas de computación, marketing, merchandising, centro de distribución, servicios de logística y transporte, planes de fidelización,
-                        medios de pago, entre otros.<br><br></p>
+<div class="container bg-white py-5">
+    <div class="container px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
+        <div class="card card0 border-0">
+            <div class="row d-flex">
+                <div class="col-lg-6 bg-blue">
+                    <div class="card1 pb-5">
+
+
+                    </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-6 col-lg-4"></div>
+                <div class="col-lg-6 py-5">
+                    <div class="card2 card border-0 px-4 py-5">
+                        <div class="row mb-4 px-3">
+                            <form action="https://app.99inbound.com/e/123" method="POST" target="_blank">
+                                <div class="block-heading">
+                                    <h3 3 style="text-align: center; color: blue;">Sobre Nosotros</h3>
+
+                                    <p></p>
+                                </div>
+                                <p>
+                                    FERME (Ferretería y distribuidora de materiales) nace con el fin de ofrecer soluciones en materiales de construcción que sean amigables con el presupuesto y tiempo de los clientes.
+                                </p>
+                                <p>
+                                    El paso del tiempo nos ha permitido, entre otras cosas, situarnos a la altura de las necesidades y requerimientos de nuestros clientes y hemos logrado así desarrollar mejoras en la atención del público con énfasis en la resolución de problemas y una logística
+                                    de transporte para despacho a domicilio que destaca por su puntualidad en las entregas.
+                                </p>
+
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </section>
-    </main>
-   
-
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

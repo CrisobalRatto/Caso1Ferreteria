@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'accounts',
     'main',
     'app',
+    'products',
+   
 
     
 ]

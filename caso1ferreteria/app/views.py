@@ -85,33 +85,8 @@ def contact(request):
       #  }
     #)
 
-def product(request):
-    """Renders the about product page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'main/product-page.html',
-        {
-            'title':'Pagina producto',
-            'message':'vea su producto.',
-            'year':datetime.now().year,
-            'product_page': 'active',
-        }
-    )
 
-def catalog(request):
-    """Renders the about catalog page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'main/catalog-page.html',
-        {
-            'title':'Catalogo',
-            'message':'Nuestros productos.',
-            'year':datetime.now().year,
-            'catalog_page': 'active',
-        }
-    )
+
 
 def shopping(request):
     """Renders the shopping cart page."""

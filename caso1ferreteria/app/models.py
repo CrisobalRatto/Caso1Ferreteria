@@ -324,7 +324,7 @@ class Producto(models.Model):
     id_familia = models.ForeignKey(FamiliaProducto, models.DO_NOTHING, db_column='id_familia')
     fecha_vencimiento = models.DateField(blank=True, null=True)
     id_tipo = models.ForeignKey('TipoProducto', models.DO_NOTHING, db_column='id_tipo')
-    #descripcion = models.CharField(max_length=100) #base de datos error en la o acento o no se
+    descripcion = models.CharField(max_length=100) #base de datos error en la o acento o no se
     precio_clp = models.IntegerField()
     precio_usd = models.IntegerField()
     stock = models.IntegerField()
