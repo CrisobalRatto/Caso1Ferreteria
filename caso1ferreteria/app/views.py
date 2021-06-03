@@ -7,6 +7,7 @@ from django.shortcuts import render
 from app.models import Usuario #importar modelo para registrar en db
 from django.http import HttpRequest
 from app import views
+from django.core.mail import send_mail
 
 
 from django.contrib import messages 
@@ -55,6 +56,20 @@ def contact(request):
             'contact_page': 'active',
         }
     )
+
+def contact(request):
+    if request.method == 'POST':
+        mesagge_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message = request.POST['message']
+        #send email
+        send_mail(
+            message_name,
+            message,
+            message_email,
+            ['proyecto.ferme@gmail.com'],
+            )
+        return render(request, 'contact.html')
 
 ##def register(request):
  #   """Renders the about Register page."""

@@ -121,7 +121,7 @@ class SignUpView(GuestOnlyView, FormView):
             send_activation_email(request, user.email, code)
 
             messages.success(
-                request, _('Esta registrado para activar la cuenta ingrese al link enviado a su mail.'))
+                request, _('Usuario registrado satisfactoriamente. para activar su cuenta ingrese al link enviado a su mail.'))
         else:
             raw_password = form.cleaned_data['password1']
 
@@ -130,7 +130,7 @@ class SignUpView(GuestOnlyView, FormView):
 
             messages.success(request, _('Fue registrado correctamente'))
 
-        return redirect('index')
+        return redirect('accounts:log_in')
 
 
 class ActivateView(View):

@@ -34,7 +34,7 @@ $(document).ready(function () {
                         min: 8,
                     },
                     notEmpty: {
-                        message: 'Ingrese contraseña'
+                        message: 'Ingrese contrasena'
                     }
                 }
             },
@@ -44,7 +44,7 @@ $(document).ready(function () {
                         min: 8,
                     },
                     notEmpty: {
-                        message: 'Confirme su contraseña'
+                        message: 'Confirme su contrasena'
                     }
                 }
             },
