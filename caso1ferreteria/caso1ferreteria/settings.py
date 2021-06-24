@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'accounts',
     'main',
     'app',
-    'products',
+    
    
 
     
@@ -98,14 +98,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'orcl',
-        'USER': 'C##FERME',
-        'PASSWORD': 'asd',
+        'USER': 'C##ADMIN',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '1521',
         'TEST': {
             'USER': 'default_test',
             'TBLSPACE': 'default_test_tbls',
             'TBLSPACE_TMP': 'default_test_tbls_tmp',
         },
-    },
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

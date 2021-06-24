@@ -48,15 +48,15 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
     
-    path('payment/', views.payment, name='payment'),
+    #path('payment/', views.payment, name='payment'),
     
-    path('shopping/', views.shopping, name='shopping'),
+    #path('shopping/', views.shopping, name='shopping'),
     path('', IndexPageView.as_view(), name='index'),
 
     #path('i18n/', include('django.conf.urls.i18n')),
     
 
-    path('accounts/', include('accounts.urls')),
-    path('catalog/', include('products.urls')),
+    path('cuentas/', include('accounts.urls')),
+    path('', include('app.urls', namespace='app')),
     
 ]

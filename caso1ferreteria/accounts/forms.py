@@ -59,7 +59,7 @@ class SignInViaUsernameForm(SignIn):
 
         return username
 
-
+    
 class SignInViaEmailForm(SignIn):
     email = forms.EmailField(label=_('Email'))
 

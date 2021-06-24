@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class AuthGroup(models.Model):
@@ -284,10 +285,17 @@ class Factura(models.Model):
 class FamiliaProducto(models.Model):
     id_familia = models.IntegerField(primary_key=True)
     nombre_familia = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=30, unique=True)
 
     class Meta:
-        managed = False
+        managed = True
+        ordering = ('nombre_familia',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
         db_table = 'familia_producto'
+
+    #def get_absolute_url(self):
+        #return reverse('app:product_list_by_category', args=[self.slug])
 
 
 class MedioPago(models.Model):
@@ -320,8 +328,9 @@ class OrdenCompra(models.Model):
 class Producto(models.Model):
     id_producto = models.BigIntegerField(primary_key=True)
     nombre_producto = models.CharField(max_length=30)
+    slug = models.SlugField(max_length=30, unique=True)
     id_proveedor = models.ForeignKey('Proveedor', models.DO_NOTHING, db_column='id_proveedor')
-    id_familia = models.ForeignKey(FamiliaProducto, models.DO_NOTHING, db_column='id_familia')
+    id_familia = models.ForeignKey(FamiliaProducto, models.DO_NOTHING, related_name='products', db_column='id_familia')
     fecha_vencimiento = models.DateField(blank=True, null=True)
     id_tipo = models.ForeignKey('TipoProducto', models.DO_NOTHING, db_column='id_tipo')
     descripcion = models.CharField(max_length=100) #base de datos error en la o acento o no se
@@ -331,8 +340,18 @@ class Producto(models.Model):
     foto = models.BinaryField()
 
     class Meta:
-        managed = False
+        managed = True
+        ordering = ('nombre_producto',)
+        index_together = (('id_familia', 'slug'),)
         db_table = 'producto'
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('app:product_detail', args=[self.id, self.slug])
+
+    
 
 
 class ProductoProveedor(models.Model):

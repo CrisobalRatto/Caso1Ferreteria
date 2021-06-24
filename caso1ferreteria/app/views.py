@@ -3,11 +3,12 @@ Definition of views.
 """
 
 from datetime import datetime
-from django.shortcuts import render
-from app.models import Usuario #importar modelo para registrar en db
+from django.shortcuts import render, get_object_or_404
+from app.models import Usuario, Producto, FamiliaProducto #importar modelo para registrar en db
 from django.http import HttpRequest
 from app import views
 from django.core.mail import send_mail
+from cart.forms import CartAddProductForm
 
 
 from django.contrib import messages 
@@ -43,19 +44,7 @@ def about(request):
         }
     )
 
-def contact(request):
-    """Renders the contact page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'main/contact-us.html',
-        {
-            'title':'Contactenos',
-            'message':'Pagina de contacto.',
-            'year':datetime.now().year,
-            'contact_page': 'active',
-        }
-    )
+
 
 def contact(request):
     if request.method == 'POST':
@@ -88,36 +77,51 @@ def contact(request):
 
 
 
-def shopping(request):
-    """Renders the shopping cart page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'main/shopping-cart.html',
-        {
-            'title':'Carro de compras',
-            'message':'carro de compras.',
-            'year':datetime.now().year,
-            'shopping_page': 'active',
-        }
-    )
+#def shopping(request):
+#    """Renders the shopping cart page."""
+#    assert isinstance(request, HttpRequest)
+#    return render(
+#        request,
+#        'main/shopping-cart.html',
+#        {
+#            'title':'Carro de compras',
+#            'message':'carro de compras.',
+#            'year':datetime.now().year,
+#            'shopping_page': 'active',
+#        }
+#    )
 
-def payment(request):
-    """Renders the payment  page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'main/payment-page.html',
-        {
-            'title':'Pago',
-            'message':'pague aqui.',
-            'year':datetime.now().year,
-            'register_page': 'active',
-        }
-    )
+#def payment(request):
+#    """Renders the payment  page."""
+#    assert isinstance(request, HttpRequest)
+#    return render(
+#        request,
+#        'main/payment-page.html',
+#        {
+#            'title':'Pago',
+#            'message':'pague aqui.',
+#            'year':datetime.now().year,
+#            'register_page': 'active',
+#        }
+#    )
+
+def product_list(request, category_slug=None):
+    category = None
+    categories = FamiliaProducto.objects.all()
+    products = Producto.objects.filter()
+    if category_slug:
+        category = get_object_or_404(FamiliaProducto, slug=category_slug)
+        products = Producto.filter(category=category)
+    context = {'category': category, 'categories': categories, 'products': products}
+    return render(request, 'product/list.html', context)
 
 
 
+def product_detail(request, id, slug):
+    product = get_object_or_404(Product, id=id, slug=slug, available=True)
+    cart_product_form = CartAddProductForm()
+    context = {'product': product, 'cart_product_form': cart_product_form}
+    return render(request, 'product/detail.html', context)
 
 
 
