@@ -12,7 +12,7 @@ BASE_DIR = dirname(dirname(os.path.abspath(__file__)))
 CONTENT_DIR = os.path.join(BASE_DIR, 'content')
 #C:\Users\Cris20xx\source\repos\CrisobalRatto\Caso1Ferreteria\caso1ferreteria\content\
 
-SECRET_KEY = 'e81a1891-b28b-4b00-b5a7-af0a0e216df9'
+SECRET_KEY = ''
 
 DEBUG = True
 ALLOWED_HOSTS = []
